@@ -75,13 +75,14 @@ for fold in folders:
                 x.append(contig_count)
                 y.append(float(probability))
     print(max(x))
-    plt.figure(figsize=(21,3))
 
+    plt.subplot(210+number)
     plt.scatter(x, np.log10(y), s=1, c=color, marker='o', cmap=None, norm=None, vmin=None,
             vmax=None, alpha=None, linewidths=0, verts=None, edgecolors=color,
             hold=None, data=None)
     plt.ylim([0, 3])
     plt.xlim([0, len(contig_set)])
-    plt.savefig("{}_sliding_window_pi.eps".format(fold), format="eps")
-    #plt.show()
-    #exit()
+#
+#plt.savefig("{}_sliding_window_pi.eps".format(fold), format="eps")
+plt.show()
+exit()
